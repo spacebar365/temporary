@@ -1,0 +1,48 @@
+package org.bouncycastle.p107d.p108a.p109a.p112c;
+
+import org.bouncycastle.p107d.p108a.AbstractC1386g;
+import org.bouncycastle.p107d.p108a.AbstractC1389j;
+import org.bouncycastle.p107d.p108a.InterfaceC1387h;
+
+/* JADX INFO: renamed from: org.bouncycastle.d.a.a.c.ax */
+/* JADX INFO: loaded from: classes.dex */
+final class C1258ax implements InterfaceC1387h {
+
+    /* JADX INFO: renamed from: a */
+    final /* synthetic */ int f4812a;
+
+    /* JADX INFO: renamed from: b */
+    final /* synthetic */ int[] f4813b;
+
+    /* JADX INFO: renamed from: c */
+    final /* synthetic */ C1257aw f4814c;
+
+    C1258ax(C1257aw c1257aw, int i, int[] iArr) {
+        this.f4814c = c1257aw;
+        this.f4812a = i;
+        this.f4813b = iArr;
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.InterfaceC1387h
+    /* JADX INFO: renamed from: a */
+    public final int mo2913a() {
+        return this.f4812a;
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.InterfaceC1387h
+    /* JADX INFO: renamed from: a */
+    public final AbstractC1389j mo2914a(int i) {
+        int[] iArr = new int[12];
+        int[] iArr2 = new int[12];
+        int i2 = 0;
+        for (int i3 = 0; i3 < this.f4812a; i3++) {
+            int i4 = ((i3 ^ i) - 1) >> 31;
+            for (int i5 = 0; i5 < 12; i5++) {
+                iArr[i5] = iArr[i5] ^ (this.f4813b[i2 + i5] & i4);
+                iArr2[i5] = iArr2[i5] ^ (this.f4813b[(i2 + 12) + i5] & i4);
+            }
+            i2 += 24;
+        }
+        return this.f4814c.mo2908a((AbstractC1386g) new C1260az(iArr), (AbstractC1386g) new C1260az(iArr2), false);
+    }
+}

@@ -1,0 +1,92 @@
+package org.bouncycastle.p107d.p108a.p109a.p112c;
+
+import java.math.BigInteger;
+import org.bouncycastle.p107d.p108a.AbstractC1381d;
+import org.bouncycastle.p107d.p108a.AbstractC1386g;
+import org.bouncycastle.p107d.p108a.AbstractC1389j;
+import org.bouncycastle.p107d.p108a.InterfaceC1387h;
+import org.bouncycastle.p107d.p117c.AbstractC1420g;
+import org.bouncycastle.p142f.p143a.C1541f;
+
+/* JADX INFO: renamed from: org.bouncycastle.d.a.a.c.ah */
+/* JADX INFO: loaded from: classes.dex */
+public final class C1242ah extends AbstractC1381d.b {
+
+    /* JADX INFO: renamed from: i */
+    public static final BigInteger f4781i = new BigInteger(1, C1541f.m4106a("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000000001"));
+
+    /* JADX INFO: renamed from: j */
+    protected C1246al f4782j;
+
+    public C1242ah() {
+        super(f4781i);
+        this.f4782j = new C1246al(this, null, null);
+        this.f5004b = mo2906a(new BigInteger(1, C1541f.m4106a("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFE")));
+        this.f5005c = mo2906a(new BigInteger(1, C1541f.m4106a("B4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4")));
+        this.f5006d = new BigInteger(1, C1541f.m4106a("FFFFFFFFFFFFFFFFFFFFFFFFFFFF16A2E0B8F03E13DD29455C5C2A3D"));
+        this.f5007e = BigInteger.valueOf(1L);
+        this.f5008f = 2;
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    public final int mo2905a() {
+        return f4781i.bitLength();
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    public final AbstractC1386g mo2906a(BigInteger bigInteger) {
+        return new C1245ak(bigInteger);
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    public final InterfaceC1387h mo2907a(AbstractC1389j[] abstractC1389jArr, int i) {
+        int[] iArr = new int[i * 7 * 2];
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            AbstractC1389j abstractC1389j = abstractC1389jArr[i3 + 0];
+            AbstractC1420g.m3664a(((C1245ak) abstractC1389j.m3464k()).f4790b, iArr, i2);
+            int i4 = i2 + 7;
+            AbstractC1420g.m3664a(((C1245ak) abstractC1389j.m3465l()).f4790b, iArr, i4);
+            i2 = i4 + 7;
+        }
+        return new C1243ai(this, i, iArr);
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    protected final AbstractC1389j mo2908a(AbstractC1386g abstractC1386g, AbstractC1386g abstractC1386g2, boolean z) {
+        return new C1246al(this, abstractC1386g, abstractC1386g2, z);
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    protected final AbstractC1389j mo2909a(AbstractC1386g abstractC1386g, AbstractC1386g abstractC1386g2, AbstractC1386g[] abstractC1386gArr, boolean z) {
+        return new C1246al(this, abstractC1386g, abstractC1386g2, abstractC1386gArr, z);
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: a */
+    public final boolean mo2910a(int i) {
+        switch (i) {
+            case 2:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: c */
+    protected final AbstractC1381d mo2911c() {
+        return new C1242ah();
+    }
+
+    @Override // org.bouncycastle.p107d.p108a.AbstractC1381d
+    /* JADX INFO: renamed from: e */
+    public final AbstractC1389j mo2912e() {
+        return this.f4782j;
+    }
+}

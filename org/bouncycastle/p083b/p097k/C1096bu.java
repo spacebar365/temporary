@@ -1,0 +1,122 @@
+package org.bouncycastle.p083b.p097k;
+
+import java.security.SecureRandom;
+import org.bouncycastle.p107d.p108a.p114c.AbstractC1379c;
+import org.bouncycastle.p107d.p108a.p114c.AbstractC1380d;
+import org.bouncycastle.p142f.C1535a;
+
+/* JADX INFO: renamed from: org.bouncycastle.b.k.bu */
+/* JADX INFO: loaded from: classes.dex */
+public final class C1096bu extends C1075b {
+
+    /* JADX INFO: renamed from: b */
+    private final byte[] f4449b;
+
+    public C1096bu(byte[] bArr) {
+        super(true);
+        this.f4449b = new byte[56];
+        System.arraycopy(bArr, 0, this.f4449b, 0, 56);
+    }
+
+    /* JADX INFO: renamed from: b */
+    public final byte[] m2645b() {
+        return C1535a.m4086b(this.f4449b);
+    }
+
+    public C1096bu(SecureRandom secureRandom) {
+        super(true);
+        this.f4449b = new byte[56];
+        byte[] bArr = this.f4449b;
+        secureRandom.nextBytes(bArr);
+        bArr[0] = (byte) (bArr[0] & 252);
+        bArr[55] = (byte) (bArr[55] | 128);
+    }
+
+    /* JADX INFO: renamed from: c */
+    public final C1097bv m2646c() {
+        byte[] bArr = new byte[56];
+        AbstractC1379c.m3324a(this.f4449b, bArr);
+        return new C1097bv(bArr, 0);
+    }
+
+    /* JADX INFO: renamed from: a */
+    public final void m2644a(C1097bv c1097bv, byte[] bArr, int i) {
+        byte[] bArr2 = new byte[56];
+        c1097bv.m2647a(bArr2, 0);
+        byte[] bArr3 = this.f4449b;
+        int[] iArr = new int[14];
+        for (int i2 = 0; i2 < 14; i2++) {
+            int i3 = (i2 * 4) + 0;
+            int i4 = bArr3[i3] & 255;
+            int i5 = i3 + 1;
+            int i6 = i4 | ((bArr3[i5] & 255) << 8);
+            int i7 = i5 + 1;
+            iArr[i2] = (bArr3[i7 + 1] << 24) | i6 | ((bArr3[i7] & 255) << 16);
+        }
+        iArr[0] = iArr[0] & (-4);
+        iArr[13] = iArr[13] | Integer.MIN_VALUE;
+        int[] iArr2 = new int[16];
+        AbstractC1380d.m3330a(bArr2, iArr2);
+        int[] iArr3 = new int[16];
+        AbstractC1380d.m3337a(iArr2, iArr3, 0);
+        int[] iArr4 = new int[16];
+        iArr4[0] = 1;
+        int[] iArr5 = new int[16];
+        iArr5[0] = 1;
+        int[] iArr6 = new int[16];
+        int[] iArr7 = new int[16];
+        int[] iArr8 = new int[16];
+        int i8 = 1;
+        int i9 = 447;
+        while (true) {
+            AbstractC1380d.m3338a(iArr5, iArr6, iArr7);
+            AbstractC1380d.m3350d(iArr5, iArr6, iArr5);
+            AbstractC1380d.m3338a(iArr3, iArr4, iArr6);
+            AbstractC1380d.m3350d(iArr3, iArr4, iArr3);
+            AbstractC1380d.m3343b(iArr7, iArr3, iArr7);
+            AbstractC1380d.m3343b(iArr5, iArr6, iArr5);
+            AbstractC1380d.m3346c(iArr6, iArr6);
+            AbstractC1380d.m3346c(iArr3, iArr3);
+            AbstractC1380d.m3350d(iArr6, iArr3, iArr8);
+            AbstractC1380d.m3334a(iArr8, 39082, iArr4);
+            AbstractC1380d.m3338a(iArr4, iArr3, iArr4);
+            AbstractC1380d.m3343b(iArr4, iArr8, iArr4);
+            AbstractC1380d.m3343b(iArr3, iArr6, iArr3);
+            AbstractC1380d.m3350d(iArr7, iArr5, iArr6);
+            AbstractC1380d.m3338a(iArr7, iArr5, iArr5);
+            AbstractC1380d.m3346c(iArr5, iArr5);
+            AbstractC1380d.m3346c(iArr6, iArr6);
+            AbstractC1380d.m3343b(iArr6, iArr2, iArr6);
+            i9--;
+            int i10 = (iArr[i9 >>> 5] >>> (i9 & 31)) & 1;
+            int i11 = i8 ^ i10;
+            AbstractC1380d.m3328a(i11, iArr3, iArr5);
+            AbstractC1380d.m3328a(i11, iArr4, iArr6);
+            if (i9 < 2) {
+                break;
+            } else {
+                i8 = i10;
+            }
+        }
+        for (int i12 = 0; i12 < 2; i12++) {
+            int[] iArr9 = new int[16];
+            int[] iArr10 = new int[16];
+            AbstractC1380d.m3338a(iArr3, iArr4, iArr9);
+            AbstractC1380d.m3350d(iArr3, iArr4, iArr10);
+            AbstractC1380d.m3346c(iArr9, iArr9);
+            AbstractC1380d.m3346c(iArr10, iArr10);
+            AbstractC1380d.m3343b(iArr9, iArr10, iArr3);
+            AbstractC1380d.m3350d(iArr9, iArr10, iArr9);
+            AbstractC1380d.m3334a(iArr9, 39082, iArr4);
+            AbstractC1380d.m3338a(iArr4, iArr10, iArr4);
+            AbstractC1380d.m3343b(iArr4, iArr9, iArr4);
+        }
+        AbstractC1380d.m3336a(iArr4, iArr4);
+        AbstractC1380d.m3343b(iArr3, iArr4, iArr3);
+        AbstractC1380d.m3345c(iArr3);
+        AbstractC1380d.m3335a(iArr3, bArr, i);
+        if (!(!C1535a.m4075a(bArr, i, 56))) {
+            throw new IllegalStateException("X448 agreement failed");
+        }
+    }
+}
