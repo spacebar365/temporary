@@ -1,0 +1,147 @@
+package org.bouncycastle.b.h;
+
+import org.bouncycastle.b.k.ba;
+import org.bouncycastle.b.k.be;
+import org.bouncycastle.b.z;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class h implements z {
+    private byte[] a;
+    private byte[] b;
+    private int c;
+    private org.bouncycastle.b.e d;
+    private org.bouncycastle.b.j.a e;
+    private int f;
+    private ba g;
+    private ba h;
+
+    public h(org.bouncycastle.b.e eVar) {
+        this(eVar, eVar.b() * 8, null);
+    }
+
+    private h(org.bouncycastle.b.e eVar, int i, org.bouncycastle.b.j.a aVar) {
+        if (i % 8 != 0) {
+            throw new IllegalArgumentException("MAC size must be multiple of 8");
+        }
+        if (!(eVar instanceof org.bouncycastle.b.e.o)) {
+            throw new IllegalArgumentException("cipher must be instance of DESEngine");
+        }
+        this.d = new org.bouncycastle.b.i.b(eVar);
+        this.e = aVar;
+        this.f = i / 8;
+        this.a = new byte[eVar.b()];
+        this.b = new byte[eVar.b()];
+        this.c = 0;
+    }
+
+    public h(org.bouncycastle.b.e eVar, org.bouncycastle.b.j.a aVar) {
+        this(eVar, eVar.b() * 8, aVar);
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final int a(byte[] bArr, int i) {
+        int iB = this.d.b();
+        if (this.e == null) {
+            while (this.c < iB) {
+                this.b[this.c] = 0;
+                this.c++;
+            }
+        } else {
+            if (this.c == iB) {
+                this.d.a(this.b, 0, this.a, 0);
+                this.c = 0;
+            }
+            this.e.a(this.b, this.c);
+        }
+        this.d.a(this.b, 0, this.a, 0);
+        org.bouncycastle.b.e.o oVar = new org.bouncycastle.b.e.o();
+        oVar.a(false, (org.bouncycastle.b.i) this.g);
+        oVar.a(this.a, 0, this.a, 0);
+        oVar.a(true, (org.bouncycastle.b.i) this.h);
+        oVar.a(this.a, 0, this.a, 0);
+        System.arraycopy(this.a, 0, bArr, i, this.f);
+        c();
+        return this.f;
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final String a() {
+        return "ISO9797Alg3";
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final void a(byte b) {
+        if (this.c == this.b.length) {
+            this.d.a(this.b, 0, this.a, 0);
+            this.c = 0;
+        }
+        byte[] bArr = this.b;
+        int i = this.c;
+        this.c = i + 1;
+        bArr[i] = b;
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final void a(org.bouncycastle.b.i iVar) {
+        ba baVar;
+        c();
+        if (!(iVar instanceof ba) && !(iVar instanceof be)) {
+            throw new IllegalArgumentException("params must be an instance of KeyParameter or ParametersWithIV");
+        }
+        byte[] bArrA = (iVar instanceof ba ? (ba) iVar : (ba) ((be) iVar).b()).a();
+        if (bArrA.length == 16) {
+            baVar = new ba(bArrA, 0, 8);
+            this.g = new ba(bArrA, 8, 8);
+            this.h = baVar;
+        } else {
+            if (bArrA.length != 24) {
+                throw new IllegalArgumentException("Key must be either 112 or 168 bit long");
+            }
+            baVar = new ba(bArrA, 0, 8);
+            this.g = new ba(bArrA, 8, 8);
+            this.h = new ba(bArrA, 16, 8);
+        }
+        if (iVar instanceof be) {
+            this.d.a(true, new be(baVar, ((be) iVar).a()));
+        } else {
+            this.d.a(true, baVar);
+        }
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final void a(byte[] bArr, int i, int i2) {
+        if (i2 < 0) {
+            throw new IllegalArgumentException("Can't have a negative input length!");
+        }
+        int iB = this.d.b();
+        int i3 = iB - this.c;
+        if (i2 > i3) {
+            System.arraycopy(bArr, i, this.b, this.c, i3);
+            this.d.a(this.b, 0, this.a, 0);
+            this.c = 0;
+            i2 -= i3;
+            i += i3;
+            while (i2 > iB) {
+                this.d.a(bArr, i, this.a, 0);
+                i2 -= iB;
+                i += iB;
+            }
+        }
+        System.arraycopy(bArr, i, this.b, this.c, i2);
+        this.c += i2;
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final int b() {
+        return this.f;
+    }
+
+    @Override // org.bouncycastle.b.z
+    public final void c() {
+        for (int i = 0; i < this.b.length; i++) {
+            this.b[i] = 0;
+        }
+        this.c = 0;
+        this.d.c();
+    }
+}

@@ -1,0 +1,17 @@
+package org.bouncycastle.jcajce.provider.digest;
+
+import org.bouncycastle.b.b.a;
+
+/* JADX INFO: loaded from: classes.dex */
+public class Blake2b$Blake2b512 extends BCMessageDigest implements Cloneable {
+    public Blake2b$Blake2b512() {
+        super(new a(512));
+    }
+
+    @Override // java.security.MessageDigest, java.security.MessageDigestSpi
+    public Object clone() {
+        Blake2b$Blake2b512 blake2b$Blake2b512 = (Blake2b$Blake2b512) super.clone();
+        blake2b$Blake2b512.a = new a((a) this.a);
+        return blake2b$Blake2b512;
+    }
+}

@@ -1,0 +1,90 @@
+package org.bouncycastle.a.p;
+
+import org.bouncycastle.a.p;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface a {
+    public static final p A;
+    public static final p B;
+    public static final p C;
+    public static final p D;
+    public static final p E;
+    public static final p F;
+    public static final p G;
+    public static final p H;
+    public static final p I;
+    public static final p J;
+    public static final p K;
+    public static final p L;
+    public static final p M;
+    public static final p a;
+    public static final p b;
+    public static final p c;
+    public static final p d;
+    public static final p e;
+    public static final p f;
+    public static final p g;
+    public static final p h;
+    public static final p i;
+    public static final p j;
+    public static final p k;
+    public static final p l;
+    public static final p m;
+    public static final p n;
+    public static final p o;
+    public static final p p;
+    public static final p q;
+    public static final p r;
+    public static final p s;
+    public static final p t;
+    public static final p u;
+    public static final p v;
+    public static final p w;
+    public static final p x;
+    public static final p y;
+    public static final p z;
+
+    static {
+        p pVar = new p("1.2.410.200046");
+        a = pVar;
+        p pVarB = pVar.b("1");
+        b = pVarB;
+        c = pVarB.b("1");
+        d = b.b("2");
+        e = b.b("0");
+        f = b.b("1");
+        g = c.b("1");
+        h = c.b("2");
+        i = c.b("3");
+        j = c.b("4");
+        k = c.b("5");
+        l = c.b("6");
+        m = c.b("7");
+        n = c.b("8");
+        o = c.b("9");
+        p = c.b("10");
+        q = c.b("11");
+        r = c.b("12");
+        s = c.b("13");
+        t = c.b("14");
+        u = c.b("15");
+        v = c.b("21");
+        w = c.b("22");
+        x = c.b("23");
+        y = c.b("31");
+        z = c.b("32");
+        A = c.b("33");
+        B = c.b("34");
+        C = c.b("35");
+        D = c.b("36");
+        E = c.b("37");
+        F = c.b("38");
+        G = c.b("39");
+        H = c.b("40");
+        I = c.b("41");
+        J = c.b("42");
+        K = c.b("43");
+        L = c.b("44");
+        M = c.b("45");
+    }
+}

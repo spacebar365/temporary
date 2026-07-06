@@ -1,0 +1,93 @@
+package org.bouncycastle.a.n;
+
+import org.bouncycastle.a.p;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface c {
+    public static final p A;
+    public static final p B;
+    public static final p C;
+    public static final p D;
+    public static final p E;
+    public static final p F;
+    public static final p G;
+    public static final p H;
+    public static final p I;
+    public static final p J;
+    public static final p K;
+    public static final p L;
+    public static final p a;
+    public static final p b;
+    public static final p c;
+    public static final p d;
+    public static final p e;
+    public static final p f;
+    public static final p g;
+    public static final p h;
+    public static final p i;
+    public static final p j;
+    public static final p k;
+    public static final p l;
+    public static final p m;
+    public static final p n;
+    public static final p o;
+    public static final p p;
+    public static final p q;
+    public static final p r;
+    public static final p s;
+    public static final p t;
+    public static final p u;
+    public static final p v;
+    public static final p w;
+    public static final p x;
+    public static final p y;
+    public static final p z;
+
+    static {
+        p pVar = new p("2.16.840.1.113730.1");
+        a = pVar;
+        b = pVar.b("1");
+        c = a.b("2");
+        d = a.b("3");
+        e = a.b("4");
+        f = a.b("7");
+        g = a.b("8");
+        h = a.b("12");
+        i = a.b("13");
+        p pVar2 = new p("2.16.840.1.113733.1");
+        j = pVar2;
+        k = pVar2.b("6.3");
+        l = j.b("6.9");
+        m = j.b("6.11");
+        n = j.b("6.13");
+        o = j.b("6.15");
+        p = j.b("8.1");
+        p pVar3 = new p("2.16.840.1.113719");
+        q = pVar3;
+        r = pVar3.b("1.9.4.1");
+        p pVar4 = new p("1.2.840.113533.7");
+        s = pVar4;
+        t = pVar4.b("65.0");
+        u = s.b("66.10");
+        v = new p("1.3.6.1.4.1.188.7.1.1.2");
+        p pVar5 = new p("1.3.6.1.4.1.3029");
+        w = pVar5;
+        p pVarB = pVar5.b("1");
+        x = pVarB;
+        y = pVarB.b("1.1");
+        z = x.b("1.2");
+        A = x.b("1.3");
+        B = x.b("1.4");
+        p pVar6 = new p("1.3.6.1.4.1.1722.12.2");
+        C = pVar6;
+        D = pVar6.b("1.5");
+        E = C.b("1.8");
+        F = C.b("1.12");
+        G = C.b("1.16");
+        H = C.b("2.4");
+        I = C.b("2.5");
+        J = C.b("2.7");
+        K = C.b("2.8");
+        L = new p("1.3.6.1.4.1.11591.4.11");
+    }
+}
